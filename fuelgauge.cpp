@@ -25,8 +25,8 @@ void fuelgauge::paintEvent(QPaintEvent *)
 {
     QPainter p(this);
 
-    QSvgRenderer svgRenderer1(QStringLiteral("/Users/lukebessell/Desktop/CarDashboardQT/CarDashboardUniversity/images/fuel_bg.svg"));
-    QSvgRenderer svgRenderer2(QStringLiteral("/Users/lukebessell/Desktop/CarDashboardQT/CarDashboardUniversity/images/fuel_icon.svg"));
+    QSvgRenderer svgRenderer1(QStringLiteral("/Users/lukebessell/Documents/GitHub/FYP-Car-Dashboard/images/fuel_bg.svg"));
+    QSvgRenderer svgRenderer2(QStringLiteral("/Users/lukebessell/Documents/GitHub/FYP-Car-Dashboard/images/fuel_icon.svg"));
 
     // Render the SVG onto the painter
     svgRenderer1.render(&p, QRectF(50, 175, 250, 50));
