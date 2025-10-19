@@ -1,2 +1,2 @@
-# FYP-Car-Dashboard
-This is the Repository containing my Final Year Project, a virtual Car Dashboard.
+# FYP Car Dashboard
+This is my University Final Year Project, whereby I am creating a virtual car dashboard.
