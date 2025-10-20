@@ -8,15 +8,13 @@ class fuelgauge : public QWidget
     Q_OBJECT
 public:
     explicit fuelgauge(QWidget *parent = nullptr);
-    void setSpeed(int speed);
+    void setFuelLevel(float fuel);
 
 protected:
     void paintEvent(QPaintEvent *event) override;
 
 private:
-    int m_speed;
-    int m_minSpeed;
-    int m_maxSpeed;
+    float m_fuelLevel;
 };
 
 #endif // SPEEDOMETER_H

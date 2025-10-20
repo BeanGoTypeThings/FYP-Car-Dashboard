@@ -50,17 +50,20 @@ void CarDashboard::keyReleaseEvent(QKeyEvent *event)
 void CarDashboard::updateProgressBar()
 {
     // If UP ARROW pressed, increase speed
-    if (upArrowPressed) {
+    if (upArrowPressed && (currentFuel != 0)) {
         currentSpeed += 1;
         if (currentSpeed > 160) {
             currentSpeed = 160;
         }
 
         // Slowly decrease fuel if driving
-        currentFuel -= 0.005;
+        currentFuel -= 0.05;
+        if (currentFuel < 0) {
+            currentFuel = 0;
+        }
     }
     // If DOWN ARROW pressed, decrease speed
-    else if (downArrowPressed) {
+    else if (downArrowPressed && (currentFuel != 0)) {
         currentSpeed -= 2;
         if (currentSpeed < 0) {
             currentSpeed = 0;
@@ -77,5 +80,6 @@ void CarDashboard::updateProgressBar()
     ui->fuelBar->setValue(currentFuel);
     ui->fuelValue->setText(QString::number(currentFuel) + " %");
     ui->speedometerWidget->setSpeed(currentSpeed);
+    ui->fuelgaugewidget->setFuelLevel(currentFuel);
 }
 
