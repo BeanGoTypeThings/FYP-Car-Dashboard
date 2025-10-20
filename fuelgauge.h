@@ -2,6 +2,7 @@
 #define FUELGAUGE_H
 
 #include <QWidget>
+#include <QQuickWidget>
 
 class fuelgauge : public QWidget
 {
@@ -15,6 +16,7 @@ protected:
 
 private:
     float m_fuelLevel;
+    QQuickWidget *m_fuelIcon;
 };
 
 #endif // SPEEDOMETER_H
