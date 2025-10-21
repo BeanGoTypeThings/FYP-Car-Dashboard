@@ -8,8 +8,9 @@ CarDashboard::CarDashboard(QWidget *parent)
     , ui(new Ui::CarDashboard)
     , upArrowPressed(false)
     , downArrowPressed(false)
-    , currentSpeed(0)
+    , currentSpeed(0.0)
     , currentFuel(100)
+    , currentTorque(400)
 {
     ui->setupUi(this);
     
@@ -61,6 +62,12 @@ void CarDashboard::updateProgressBar()
         if (currentFuel < 0) {
             currentFuel = 0;
         }
+
+        // Decrease torque if accelerating
+        currentTorque -= 10;
+        if (currentTorque < 0) {
+            currentTorque = 0;
+        }
     }
     // If DOWN ARROW pressed, decrease speed
     else if (downArrowPressed && (currentFuel != 0)) {
@@ -68,18 +75,25 @@ void CarDashboard::updateProgressBar()
         if (currentSpeed < 0) {
             currentSpeed = 0;
         }
+
+        // Decrease torque if decelerating
+        currentTorque -= 10;
+        if (currentTorque < -400) {
+            currentTorque = -400;
+        }
     }
     // If nothing pressed, slowly decrease speed
     else {
-        currentSpeed -= 1;
+        currentSpeed -= 0.25;
         if (currentSpeed < 0) {
             currentSpeed = 0;
         }
+        currentTorque += 10;
     }
 
-    ui->fuelBar->setValue(currentFuel);
-    ui->fuelValue->setText(QString::number(currentFuel) + " %");
     ui->speedometerWidget->setSpeed(currentSpeed);
-    ui->fuelgaugewidget->setFuelLevel(currentFuel);
+    ui->fuelmeterwidget->setFuelLevel(currentFuel);
+    ui->torquegaugewidget->setTorque(currentTorque);
+    //ui->fuelefficiencywidget->setEfficiency(20);
 }
 

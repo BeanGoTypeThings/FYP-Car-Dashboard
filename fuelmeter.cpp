@@ -1,4 +1,4 @@
-#include "fuelgauge.h"
+#include "fuelmeter.h"
 #include <QPainter>
 #include <QPainterPath>
 #include <QConicalGradient>
@@ -10,7 +10,7 @@
 #include <QQuickItem>
 #include <QQuickWidget>
 
-fuelgauge::fuelgauge(QWidget *parent)
+fuelmeter::fuelmeter(QWidget *parent)
     : QWidget(parent),
     m_fuelLevel(100.0),
     m_fuelIcon(nullptr)
@@ -32,7 +32,7 @@ fuelgauge::fuelgauge(QWidget *parent)
     m_fuelIcon->setClearColor(Qt::transparent);
 }
 
-void fuelgauge::setFuelLevel(float fuel)
+void fuelmeter::setFuelLevel(float fuel)
 {
     m_fuelLevel = qBound(0.0f, fuel, 100.0f);
 
@@ -44,7 +44,7 @@ void fuelgauge::setFuelLevel(float fuel)
     update();
 }
 
-void fuelgauge::paintEvent(QPaintEvent *)
+void fuelmeter::paintEvent(QPaintEvent *)
 {
     QPainter p(this);
 
@@ -54,7 +54,7 @@ void fuelgauge::paintEvent(QPaintEvent *)
     // Get the background SVG
     QSvgRenderer svgRenderer1(QStringLiteral("/Users/lukebessell/Documents/GitHub/FYP-Car-Dashboard/images/fuel_bg.svg"));
 
-    QRectF svgBgRect(50, 175, 286, 54); // Sizing for fuel_bg.svg
+    QRectF svgBgRect(0, 220, 300, 57); // Sizing for fuel_bg.svg
 
     double iconX = svgBgRect.left() + svgBgRect.height() * 0.4;
     double iconY = svgBgRect.center().y() - 18;
@@ -134,7 +134,7 @@ void fuelgauge::paintEvent(QPaintEvent *)
     else {
         p.setPen(QColor(71, 224, 7));
     }
-    QFont font("Consolas", 24, QFont::Bold);
+    QFont font("Roboto", 24, QFont::Bold);
     p.setFont(font);
 
     double textX = svgBgRect.right() - svgBgRect.height() / 0.5;

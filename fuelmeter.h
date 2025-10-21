@@ -1,14 +1,14 @@
-#ifndef FUELGAUGE_H
-#define FUELGAUGE_H
+#ifndef FUELMETER_H
+#define FUELMETER_H
 
 #include <QWidget>
 #include <QQuickWidget>
 
-class fuelgauge : public QWidget
+class fuelmeter : public QWidget
 {
     Q_OBJECT
 public:
-    explicit fuelgauge(QWidget *parent = nullptr);
+    explicit fuelmeter(QWidget *parent = nullptr);
     void setFuelLevel(float fuel);
 
 protected:
@@ -19,4 +19,4 @@ private:
     QQuickWidget *m_fuelIcon;
 };
 
-#endif // SPEEDOMETER_H
+#endif // FUELMETER_H

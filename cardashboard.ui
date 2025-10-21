@@ -18,40 +18,18 @@
     <item>
      <layout class="QVBoxLayout" name="verticalLayout_2">
       <item>
-       <layout class="QHBoxLayout" name="horizontalLayout_2">
-        <item>
-         <widget class="QLabel" name="fuelValue">
-          <property name="text">
-           <string>VALUE</string>
-          </property>
-         </widget>
-        </item>
-        <item>
-         <widget class="QProgressBar" name="fuelBar">
-          <property name="value">
-           <number>100</number>
-          </property>
-         </widget>
-        </item>
-        <item>
-         <widget class="QLabel" name="rpmLabel">
-          <property name="text">
-           <string>FUEL </string>
-          </property>
-          <property name="alignment">
-           <set>Qt::AlignmentFlag::AlignCenter</set>
-          </property>
-         </widget>
-        </item>
-       </layout>
-      </item>
-      <item>
        <layout class="QHBoxLayout" name="horizontalLayout">
         <item>
          <widget class="speedometer" name="speedometerWidget" native="true"/>
         </item>
         <item>
-         <widget class="fuelgauge" name="fuelgaugewidget" native="true"/>
+         <widget class="fuelgauge" name="fuelmeterwidget" native="true"/>
+        </item>
+        <item>
+         <widget class="torquegauge" name="torquegaugewidget" native="true"/>
+        </item>
+        <item>
+         <widget class="fuelefficiencymeter" name="fuelefficiencywidget" native="true"/>
         </item>
        </layout>
       </item>
@@ -65,7 +43,7 @@
      <x>0</x>
      <y>0</y>
      <width>758</width>
-     <height>24</height>
+     <height>36</height>
     </rect>
    </property>
   </widget>
@@ -82,6 +60,18 @@
    <class>fuelgauge</class>
    <extends>QWidget</extends>
    <header>fuelgauge.h</header>
+   <container>1</container>
+  </customwidget>
+  <customwidget>
+   <class>torquegauge</class>
+   <extends>QWidget</extends>
+   <header>torquegauge.h</header>
+   <container>1</container>
+  </customwidget>
+  <customwidget>
+   <class>fuelefficiencymeter</class>
+   <extends>QWidget</extends>
+   <header>fuelefficiencymeter.h</header>
    <container>1</container>
   </customwidget>
  </customwidgets>

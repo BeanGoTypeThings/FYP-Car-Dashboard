@@ -1,26 +1,26 @@
-#include "speedometer.h"
+#include "torquegauge.h"
 #include <QPainter>
 #include <QPainterPath>
 #include <QConicalGradient>
 #include <QFontDatabase>
 #include <QtMath>
 
-speedometer::speedometer(QWidget *parent)
+torquegauge::torquegauge(QWidget *parent)
     : QWidget(parent),
-    m_speed(0),
-    m_minSpeed(0),
-    m_maxSpeed(160)
+    m_torque(400),
+    m_minTorque(-400),
+    m_maxTorque(400)
 {
     setMinimumSize(350, 300);
 }
 
-void speedometer::setSpeed(int speed)
+void torquegauge::setTorque(int torque)
 {
-    m_speed = qBound(m_minSpeed, speed, m_maxSpeed);
+    m_torque = qBound(m_minTorque, torque, m_maxTorque);
     update();
 }
 
-void speedometer::paintEvent(QPaintEvent *)
+void torquegauge::paintEvent(QPaintEvent *)
 {
     QPainter p(this);
 
@@ -63,7 +63,7 @@ void speedometer::paintEvent(QPaintEvent *)
     p.drawPath(baseArc);
 
     // Gradient Progress Arc
-    double spanAngle = (double)m_speed / m_maxSpeed * 180.0;
+    double spanAngle = (double)m_torque / m_maxTorque * 180.0;
     if (spanAngle > 0) {
         QConicalGradient grad(0, 0, 90);
         grad.setColorAt(0.0, QColor(132, 201, 113, 190));
@@ -100,7 +100,7 @@ void speedometer::paintEvent(QPaintEvent *)
     p.setPen(green);
     QFont font("Roboto", 24, QFont::Bold);
     p.setFont(font);
-    QString text = QString("%1").arg(m_speed, 3, 10, QLatin1Char('0'));
+    QString text = QString("%1").arg(m_torque, 3, 10, QLatin1Char('0'));
     QRectF textRect(-40, -40, 80, 30);
     p.drawText(textRect, Qt::AlignCenter, text);
 
@@ -109,7 +109,7 @@ void speedometer::paintEvent(QPaintEvent *)
     p.setFont(smallFont);
     struct Label { int val; double ang; };
     QVector<Label> labels = {
-        {0, 90}, {40, 45}, {80, 0}, {120, -45}, {160, -90}
+        {-400, 90}, {-200, 45}, {0, 0}, {200, -45}, {400, -90}
     };
     for (const auto &l : labels) {
         double rad = qDegreesToRadians(l.ang + 90);

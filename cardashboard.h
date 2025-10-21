@@ -30,7 +30,8 @@ private:
     QTimer *timer;
     bool upArrowPressed;
     bool downArrowPressed;
-    int currentSpeed;
+    float currentSpeed;
     float currentFuel;
+    int currentTorque;
 };
 #endif // CARDASHBOARD_H

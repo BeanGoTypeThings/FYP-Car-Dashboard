@@ -9,15 +9,19 @@ CONFIG += c++17
 #DEFINES += QT_DISABLE_DEPRECATED_BEFORE=0x060000    # disables all the APIs deprecated before Qt 6.0.0
 
 SOURCES += \
-    fuelgauge.cpp \
+    fuelefficiencymeter.cpp \
+    fuelmeter.cpp \
     main.cpp \
     cardashboard.cpp \
-    speedometer.cpp
+    speedometer.cpp \
+    torquegauge.cpp
 
 HEADERS += \
     cardashboard.h \
-    fuelgauge.h \
-    speedometer.h
+    fuelefficiencymeter.h \
+    fuelmeter.h \
+    speedometer.h \
+    torquegauge.h
 
 FORMS += \
     cardashboard.ui
