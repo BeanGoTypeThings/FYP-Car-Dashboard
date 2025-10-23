@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>758</width>
-    <height>354</height>
+    <width>960</width>
+    <height>540</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -22,9 +22,6 @@
         <item>
          <widget class="speedometer" name="speedometerWidget" native="true"/>
         </item>
-        <item>
-         <widget class="fuelmeter" name="fuelmeterwidget" native="true"/>
-        </item>
        </layout>
       </item>
      </layout>
@@ -36,7 +33,7 @@
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>758</width>
+     <width>960</width>
      <height>36</height>
     </rect>
    </property>
@@ -48,12 +45,6 @@
    <class>speedometer</class>
    <extends>QWidget</extends>
    <header>speedometer.h</header>
-   <container>1</container>
-  </customwidget>
-  <customwidget>
-   <class>fuelmeter</class>
-   <extends>QWidget</extends>
-   <header>fuelmeter.h</header>
    <container>1</container>
   </customwidget>
  </customwidgets>
