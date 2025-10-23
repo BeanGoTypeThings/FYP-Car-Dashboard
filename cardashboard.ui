@@ -23,13 +23,7 @@
          <widget class="speedometer" name="speedometerWidget" native="true"/>
         </item>
         <item>
-         <widget class="fuelgauge" name="fuelmeterwidget" native="true"/>
-        </item>
-        <item>
-         <widget class="torquegauge" name="torquegaugewidget" native="true"/>
-        </item>
-        <item>
-         <widget class="fuelefficiencymeter" name="fuelefficiencywidget" native="true"/>
+         <widget class="fuelmeter" name="fuelmeterwidget" native="true"/>
         </item>
        </layout>
       </item>
@@ -57,21 +51,9 @@
    <container>1</container>
   </customwidget>
   <customwidget>
-   <class>fuelgauge</class>
+   <class>fuelmeter</class>
    <extends>QWidget</extends>
-   <header>fuelgauge.h</header>
-   <container>1</container>
-  </customwidget>
-  <customwidget>
-   <class>torquegauge</class>
-   <extends>QWidget</extends>
-   <header>torquegauge.h</header>
-   <container>1</container>
-  </customwidget>
-  <customwidget>
-   <class>fuelefficiencymeter</class>
-   <extends>QWidget</extends>
-   <header>fuelefficiencymeter.h</header>
+   <header>fuelmeter.h</header>
    <container>1</container>
   </customwidget>
  </customwidgets>

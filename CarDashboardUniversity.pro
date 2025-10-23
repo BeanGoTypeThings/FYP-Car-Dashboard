@@ -13,15 +13,13 @@ SOURCES += \
     fuelmeter.cpp \
     main.cpp \
     cardashboard.cpp \
-    speedometer.cpp \
-    torquegauge.cpp
+    speedometer.cpp
 
 HEADERS += \
     cardashboard.h \
     fuelefficiencymeter.h \
     fuelmeter.h \
-    speedometer.h \
-    torquegauge.h
+    speedometer.h
 
 FORMS += \
     cardashboard.ui

@@ -93,7 +93,6 @@ void CarDashboard::updateProgressBar()
 
     ui->speedometerWidget->setSpeed(currentSpeed);
     ui->fuelmeterwidget->setFuelLevel(currentFuel);
-    ui->torquegaugewidget->setTorque(currentTorque);
     //ui->fuelefficiencywidget->setEfficiency(20);
 }
 
