@@ -60,8 +60,10 @@ void speedometer::paintEvent(QPaintEvent *)
         double x2 = 190 * qCos(rad);
         double y2 = -190 * qSin(rad);
 
-        QColor tickColor = (angle >= 180.0 - 360) ? lightBlue : QColor(114, 219, 84, 60);
-        p.setPen(QPen(tickColor, 4, Qt::SolidLine, Qt::RoundCap));
+        // Change to Light Blue if accelerating.
+        double tickSpeed = (i / (double)majorTickCount) * m_maxSpeed;
+        QColor tickColour = (tickSpeed <= m_speed) ? lightBlue : darkBlue;
+        p.setPen(QPen(tickColour, 4, Qt::SolidLine, Qt::RoundCap));
         p.drawLine(QPointF(x1, y1), QPointF(x2, y2));
     }
 
@@ -80,13 +82,16 @@ void speedometer::paintEvent(QPaintEvent *)
     p.drawText(measurementTextRect, Qt::AlignCenter, measurementText);
 
     // Numerical Speed Values.
-    p.setPen(lightBlue);
     p.setFont(smallFont);
     struct Label { int val; double ang; };
     QVector<Label> labels = {
         {0, 105}, {40, 60}, {80, 0}, {120, -60}, {160, -105}
     };
     for (const auto &l : labels) {
+        // Change color based on whether current speed has reached this label
+        QColor labelColour = (m_speed >= l.val) ? lightBlue : darkBlue;
+        p.setPen(labelColour);
+
         double rad = qDegreesToRadians(l.ang + 90);
         double r = 165;
         QPointF pos(r * qCos(rad), -r * qSin(rad));
