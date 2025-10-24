@@ -12,33 +12,33 @@
 
 fuelmeter::fuelmeter(QWidget *parent)
     : QWidget(parent),
-    m_fuelLevel(100.0),
-    m_fuelIcon(nullptr)
+    mFuelLevel(100.0),
+    mFuelIcon(nullptr)
 {
     setMinimumSize(300, 300);
 
     // Create QML fuel icon widget
-    m_fuelIcon = new QQuickWidget(this);
+    mFuelIcon = new QQuickWidget(this);
     
     // Render in a better quality (performance cost)
     QSurfaceFormat format;
     format.setSamples(4);
-    m_fuelIcon->setFormat(format);
+    mFuelIcon->setFormat(format);
     
-    m_fuelIcon->setSource(QUrl::fromLocalFile("/Users/lukebessell/Documents/GitHub/FYP-Car-Dashboard/images/fuel_icon.qml"));
-    m_fuelIcon->setResizeMode(QQuickWidget::SizeRootObjectToView);
-    m_fuelIcon->setAttribute(Qt::WA_AlwaysStackOnTop);
-    m_fuelIcon->setAttribute(Qt::WA_TranslucentBackground);
-    m_fuelIcon->setClearColor(Qt::transparent);
+    mFuelIcon->setSource(QUrl::fromLocalFile("/Users/lukebessell/Documents/GitHub/FYP-Car-Dashboard/images/fuel_icon.qml"));
+    mFuelIcon->setResizeMode(QQuickWidget::SizeRootObjectToView);
+    mFuelIcon->setAttribute(Qt::WA_AlwaysStackOnTop);
+    mFuelIcon->setAttribute(Qt::WA_TranslucentBackground);
+    mFuelIcon->setClearColor(Qt::transparent);
 }
 
 void fuelmeter::setFuelLevel(float fuel)
 {
-    m_fuelLevel = qBound(0.0f, fuel, 100.0f);
+    mFuelLevel = qBound(0.0f, fuel, 100.0f);
 
     // Update QML fuel icon if low fuel
-    if (m_fuelIcon && m_fuelIcon->rootObject()) {
-        m_fuelIcon->rootObject()->setProperty("fuelLevel", m_fuelLevel);
+    if (mFuelIcon && mFuelIcon->rootObject()) {
+        mFuelIcon->rootObject()->setProperty("fuelLevel", mFuelLevel);
     }
 
     update();
@@ -66,13 +66,13 @@ void fuelmeter::paintEvent(QPaintEvent *)
     svgRenderer1.render(&p, svgBgRect);
 
     // Show the QML fuel icon
-    if (m_fuelIcon) {
-        m_fuelIcon->setGeometry(iconRect.toRect());
-        m_fuelIcon->show();
+    if (mFuelIcon) {
+        mFuelIcon->setGeometry(iconRect.toRect());
+        mFuelIcon->show();
     }
 
     // Left circle seperator
-    if (m_fuelLevel < 20.0) {
+    if (mFuelLevel < 20.0) {
         p.setPen(QColor(210, 48, 48));
         p.setBrush(QColor(154, 10, 10));
     }
@@ -84,7 +84,7 @@ void fuelmeter::paintEvent(QPaintEvent *)
 
     // Create squares to indicate remaining fuel
     int totalRects = 10;
-    double fuelLevel = m_fuelLevel / 100.0;
+    double fuelLevel = mFuelLevel / 100.0;
     double totalWidth = svgBgRect.width() * 0.85;
     double rectWidth = totalWidth / totalRects * 0.3;
     double spacing = totalWidth / totalRects * 0.1;
@@ -104,7 +104,7 @@ void fuelmeter::paintEvent(QPaintEvent *)
         bool colour = (i < totalRects * fuelLevel) ? true : false;
 
         if (colour == true) {
-            if (m_fuelLevel < 20.0) {
+            if (mFuelLevel < 20.0) {
                 p.fillPath(path, QColor(154, 10, 10));
             }
             else {
@@ -117,7 +117,7 @@ void fuelmeter::paintEvent(QPaintEvent *)
     }
 
     // Right circle seperator
-    if (m_fuelLevel < 20.0) {
+    if (mFuelLevel < 20.0) {
         p.setPen(QColor(210, 48, 48));
         p.setBrush(QColor(154, 10, 10));
     }
@@ -128,7 +128,7 @@ void fuelmeter::paintEvent(QPaintEvent *)
     p.drawEllipse(QPointF(svgBgRect.right() - iconRect.width() - svgBgRect.height() * 1.4,svgBgRect.center().y()), 3, 3);
 
     // Remaining fuel text
-    if (m_fuelLevel < 20.0) {
+    if (mFuelLevel < 20.0) {
         p.setPen(QColor(210, 48, 48));
     }
     else {
@@ -140,7 +140,7 @@ void fuelmeter::paintEvent(QPaintEvent *)
     double textX = svgBgRect.right() - svgBgRect.height() / 0.5;
     double textY = svgBgRect.center().y() - 25;
 
-    QString text = QString(QString::number(int(trunc(m_fuelLevel*3))) + "M");
+    QString text = QString(QString::number(int(trunc(mFuelLevel*3))) + "M");
     QRectF textRect(textX, textY, 100, 50);
     p.drawText(textRect, Qt::AlignCenter, text);
 

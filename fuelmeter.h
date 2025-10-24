@@ -15,8 +15,8 @@ protected:
     void paintEvent(QPaintEvent *event) override;
 
 private:
-    float m_fuelLevel;
-    QQuickWidget *m_fuelIcon;
+    float mFuelLevel;
+    QQuickWidget *mFuelIcon;
 };
 
 #endif // FUELMETER_H

@@ -32,6 +32,7 @@ private:
     bool downArrowPressed;
     float currentSpeed;
     float currentFuel;
-    int currentTorque;
+    double totalMileage;
+    double currentTemperature;
 };
 #endif // CARDASHBOARD_H

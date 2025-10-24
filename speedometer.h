@@ -15,9 +15,9 @@ protected:
     void paintEvent(QPaintEvent *event) override;
 
 private:
-    int m_speed;
-    int m_minSpeed;
-    int m_maxSpeed;
+    int mSpeed;
+    int mMinSpeed;
+    int mMaxSpeed;
 };
 
 #endif // SPEEDOMETER_H

@@ -7,22 +7,22 @@
 
 speedometer::speedometer(QWidget *parent)
     : QWidget(parent),
-    m_speed(0),
-    m_minSpeed(0),
-    m_maxSpeed(160)
+    mSpeed(0),
+    mMinSpeed(0),
+    mMaxSpeed(160)
 {
     setMinimumSize(350, 300);
 }
 
 void speedometer::setSpeed(int speed)
 {
-    m_speed = qBound(m_minSpeed, speed, m_maxSpeed);
+    mSpeed = qBound(mMinSpeed, speed, mMaxSpeed);
     update();
 }
 
 void speedometer::setFuel(int fuel)
 {
-
+    // For future fuel widget.
 }
 
 void speedometer::paintEvent(QPaintEvent *)
@@ -61,8 +61,8 @@ void speedometer::paintEvent(QPaintEvent *)
         double y2 = -190 * qSin(rad);
 
         // Change to Light Blue if accelerating.
-        double tickSpeed = (i / (double)majorTickCount) * m_maxSpeed;
-        QColor tickColour = (tickSpeed <= m_speed) ? lightBlue : darkBlue;
+        double tickSpeed = (i / (double)majorTickCount) * mMaxSpeed;
+        QColor tickColour = (tickSpeed <= mSpeed) ? lightBlue : darkBlue;
         p.setPen(QPen(tickColour, 4, Qt::SolidLine, Qt::RoundCap));
         p.drawLine(QPointF(x1, y1), QPointF(x2, y2));
     }
@@ -71,7 +71,7 @@ void speedometer::paintEvent(QPaintEvent *)
     p.setPen(Qt::white);
     normalFont.setUnderline(true);
     p.setFont(normalFont);
-    QString speedText = QString("%1").arg(m_speed, 3, 10, QLatin1Char('0'));
+    QString speedText = QString("%1").arg(mSpeed, 3, 10, QLatin1Char('0'));
     QRectF speedTextRect(-75, -150, 150, 60);
     p.drawText(speedTextRect, Qt::AlignCenter, speedText);
 
@@ -89,7 +89,7 @@ void speedometer::paintEvent(QPaintEvent *)
     };
     for (const auto &l : labels) {
         // Change color based on whether current speed has reached this label
-        QColor labelColour = (m_speed >= l.val) ? lightBlue : darkBlue;
+        QColor labelColour = (mSpeed >= l.val) ? lightBlue : darkBlue;
         p.setPen(labelColour);
 
         double rad = qDegreesToRadians(l.ang + 90);

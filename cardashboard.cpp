@@ -10,7 +10,8 @@ CarDashboard::CarDashboard(QWidget *parent)
     , downArrowPressed(false)
     , currentSpeed(0.0)
     , currentFuel(100)
-    , currentTorque(400)
+    , totalMileage(0.0)
+    , currentTemperature(20.0)
 {
     ui->setupUi(this);
     
@@ -50,49 +51,56 @@ void CarDashboard::keyReleaseEvent(QKeyEvent *event)
 // This functionality will be updated when pedals are introduced
 void CarDashboard::updateProgressBar()
 {
-    // If UP ARROW pressed, increase speed
+    // If UP ARROW pressed:
     if (upArrowPressed && (currentFuel != 0)) {
+        // Increase Speed
         currentSpeed += 1;
         if (currentSpeed > 160) {
             currentSpeed = 160;
         }
 
-        // Slowly decrease fuel if driving
+        // Slowly Decrease Fuel
         currentFuel -= 0.05;
         if (currentFuel < 0) {
             currentFuel = 0;
         }
 
-        // Decrease torque if accelerating
-        currentTorque -= 10;
-        if (currentTorque < 0) {
-            currentTorque = 0;
+        // Slowly Increase Temperature
+        currentTemperature += 0.02;
+        if (currentTemperature > 110.0) {
+            currentTemperature = 110.0;
         }
     }
-    // If DOWN ARROW pressed, decrease speed
+    // If DOWN ARROW pressed:
     else if (downArrowPressed && (currentFuel != 0)) {
+        // Decrease Speed Rapidly (BRAKING)
         currentSpeed -= 2;
         if (currentSpeed < 0) {
             currentSpeed = 0;
         }
 
-        // Decrease torque if decelerating
-        currentTorque -= 10;
-        if (currentTorque < -400) {
-            currentTorque = -400;
-        }
     }
-    // If nothing pressed, slowly decrease speed
+    // If nothing is pressed:
     else {
+        // Slowly Decrease Speed
         currentSpeed -= 0.25;
         if (currentSpeed < 0) {
             currentSpeed = 0;
         }
-        currentTorque += 10;
+
+        // Decrease Temperature
+        currentTemperature -= 0.01;
+        if (currentTemperature < 20.0) {
+            currentTemperature = 20.0;
+        }
     }
 
+    // Update Mileage (speed dependent)
+    totalMileage += (currentSpeed * 0.01) / 3600.0;
+
     ui->speedometerWidget->setSpeed(currentSpeed);
+    ui->infoDisplayWidget->setMileage(totalMileage);
+    ui->infoDisplayWidget->setTemperature(currentTemperature);
     //ui->fuelmeterwidget->setFuelLevel(currentFuel);
-    //ui->fuelefficiencywidget->setEfficiency(20);
 }
 
