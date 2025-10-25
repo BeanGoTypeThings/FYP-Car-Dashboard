@@ -34,6 +34,19 @@
      </rect>
     </property>
    </widget>
+   <widget class="NavDisplay" name="navDisplayWidget" native="true">
+    <property name="geometry">
+     <rect>
+      <x>230</x>
+      <y>245</y>
+      <width>500</width>
+      <height>220</height>
+     </rect>
+    </property>
+    <property name="visible">
+     <bool>false</bool>
+    </property>
+   </widget>
   </widget>
   <widget class="QMenuBar" name="menubar">
    <property name="geometry">
@@ -58,6 +71,12 @@
    <class>InfoDisplay</class>
    <extends>QWidget</extends>
    <header>infodisplay.h</header>
+   <container>1</container>
+  </customwidget>
+  <customwidget>
+   <class>NavDisplay</class>
+   <extends>QWidget</extends>
+   <header>navdisplay.h</header>
    <container>1</container>
   </customwidget>
  </customwidgets>

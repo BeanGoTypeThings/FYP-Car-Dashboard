@@ -25,7 +25,7 @@ fuelmeter::fuelmeter(QWidget *parent)
     format.setSamples(4);
     mFuelIcon->setFormat(format);
     
-    mFuelIcon->setSource(QUrl::fromLocalFile("/Users/lukebessell/Documents/GitHub/FYP-Car-Dashboard/images/fuel_icon.qml"));
+    mFuelIcon->setSource(QUrl("qrc:/images/fuel_icon.qml"));
     mFuelIcon->setResizeMode(QQuickWidget::SizeRootObjectToView);
     mFuelIcon->setAttribute(Qt::WA_AlwaysStackOnTop);
     mFuelIcon->setAttribute(Qt::WA_TranslucentBackground);
@@ -52,7 +52,7 @@ void fuelmeter::paintEvent(QPaintEvent *)
     p.setRenderHint(QPainter::Antialiasing, true);
 
     // Get the background SVG
-    QSvgRenderer svgRenderer1(QStringLiteral("/Users/lukebessell/Documents/GitHub/FYP-Car-Dashboard/images/fuel_bg.svg"));
+    QSvgRenderer svgRenderer1(QStringLiteral(":/images/fuel_bg.svg"));
 
     QRectF svgBgRect(0, 220, 300, 57); // Sizing for fuel_bg.svg
 

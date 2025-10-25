@@ -35,11 +35,8 @@ void InfoDisplay::paintEvent(QPaintEvent *)
     QColor darkBg(38, 38, 38);
     QFont infoFont("Roboto", 20);
 
-    // Add padding (otherwise cutoff occurs)
-    int padding = 2;
-
     // Top Rectangle (Mileage)
-    QRectF mileageBox(padding, padding, 200 - 2*padding, 50 - 2*padding);
+    QRectF mileageBox(2, 2, 200 - 4, 50 - 4);
     p.setPen(QPen(lightBlue, 3));
     p.setBrush(darkBg);
     p.drawRoundedRect(mileageBox, 25, 25);
@@ -51,7 +48,7 @@ void InfoDisplay::paintEvent(QPaintEvent *)
     p.drawText(mileageBox, Qt::AlignCenter, mileageText);
 
     // Bottom Rectangle (Temperature)
-    QRectF tempBox(padding, 60 + padding, 200 - 2*padding, 50 - 2*padding);
+    QRectF tempBox(2, 62, 200 - 4, 50 - 4);
     p.setPen(QPen(lightBlue, 3));
     p.setBrush(darkBg);
     p.drawRoundedRect(tempBox, 25, 25);

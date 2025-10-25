@@ -13,16 +13,21 @@ SOURCES += \
     infodisplay.cpp \
     main.cpp \
     cardashboard.cpp \
+    navdisplay.cpp \
     speedometer.cpp
 
 HEADERS += \
     cardashboard.h \
     fuelmeter.h \
     infodisplay.h \
+    navdisplay.h \
     speedometer.h
 
 FORMS += \
     cardashboard.ui
+
+RESOURCES += \
+    resources.qrc
 
 TRANSLATIONS += \
     CarDashboardUniversity_en_GB.ts

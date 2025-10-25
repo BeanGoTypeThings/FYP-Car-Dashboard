@@ -15,7 +15,7 @@ CarDashboard::CarDashboard(QWidget *parent)
 {
     ui->setupUi(this);
     
-    // Timer (updates every 10ms)
+    // Timer (updates every 0.001s)
     timer = new QTimer(this);
     connect(timer, &QTimer::timeout, this, &CarDashboard::updateProgressBar);
     timer->start(10);
@@ -33,6 +33,12 @@ void CarDashboard::keyPressEvent(QKeyEvent *event)
     }
     else if (event->key() == Qt::Key_Down) {
         downArrowPressed = true;
+    }
+    else if (event->key() == Qt::Key_N) {
+        // Toggle the navigation
+        bool showNav = !ui->navDisplayWidget->isVisible();
+        ui->navDisplayWidget->setVisible(showNav);
+        ui->infoDisplayWidget->setVisible(!showNav);
     }
     QMainWindow::keyPressEvent(event);
 }
