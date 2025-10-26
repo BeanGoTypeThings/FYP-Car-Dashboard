@@ -34,7 +34,7 @@ void GearDisplay::paintEvent(QPaintEvent *)
         
         // Active Styling
         if (isActive) {
-            rect = QRectF(2, rect.y(), 196, 46);
+            rect = QRectF(2, rect.y(), 146, 46);
             p.setPen(QPen(lightBlue, 3));
             QLinearGradient linearGrad(rect.topLeft(), QPointF(rect.right(), rect.top()));
             linearGrad.setColorAt(0, lightBlue);

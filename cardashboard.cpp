@@ -69,7 +69,7 @@ void CarDashboard::updateProgressBar()
         }
 
         // Slowly Decrease Fuel
-        currentFuel -= 0.05;
+        currentFuel -= 0.005;
         if (currentFuel < 0) {
             currentFuel = 0;
         }

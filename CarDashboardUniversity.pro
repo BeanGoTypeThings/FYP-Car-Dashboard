@@ -15,6 +15,7 @@ SOURCES += \
     main.cpp \
     cardashboard.cpp \
     navdisplay.cpp \
+    radiodisplay.cpp \
     speedometer.cpp
 
 HEADERS += \
@@ -23,6 +24,7 @@ HEADERS += \
     geardisplay.h \
     infodisplay.h \
     navdisplay.h \
+    radiodisplay.h \
     speedometer.h
 
 FORMS += \

@@ -9,7 +9,6 @@ class speedometer : public QWidget
 public:
     explicit speedometer(QWidget *parent = nullptr);
     void setSpeed(int speed);
-    void setFuel(int fuel);
 
 protected:
     void paintEvent(QPaintEvent *event) override;

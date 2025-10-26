@@ -20,11 +20,6 @@ void speedometer::setSpeed(int speed)
     update();
 }
 
-void speedometer::setFuel(int fuel)
-{
-    // For future fuel widget.
-}
-
 void speedometer::paintEvent(QPaintEvent *)
 {
     QPainter p(this);
