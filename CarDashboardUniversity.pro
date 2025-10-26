@@ -10,6 +10,7 @@ CONFIG += c++17
 
 SOURCES += \
     fuelmeter.cpp \
+    geardisplay.cpp \
     infodisplay.cpp \
     main.cpp \
     cardashboard.cpp \
@@ -19,6 +20,7 @@ SOURCES += \
 HEADERS += \
     cardashboard.h \
     fuelmeter.h \
+    geardisplay.h \
     infodisplay.h \
     navdisplay.h \
     speedometer.h

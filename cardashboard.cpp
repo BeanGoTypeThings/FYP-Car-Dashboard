@@ -57,6 +57,9 @@ void CarDashboard::keyReleaseEvent(QKeyEvent *event)
 // This functionality will be updated when pedals are introduced
 void CarDashboard::updateProgressBar()
 {
+    // Set the default gear (P)
+    char newGear = 'P';
+    
     // If UP ARROW pressed:
     if (upArrowPressed && (currentFuel != 0)) {
         // Increase Speed
@@ -76,6 +79,9 @@ void CarDashboard::updateProgressBar()
         if (currentTemperature > 110.0) {
             currentTemperature = 110.0;
         }
+        
+        // Set the accelerating gear (D)
+        newGear = 'D';
     }
     // If DOWN ARROW pressed:
     else if (downArrowPressed && (currentFuel != 0)) {
@@ -84,7 +90,10 @@ void CarDashboard::updateProgressBar()
         if (currentSpeed < 0) {
             currentSpeed = 0;
         }
-
+        
+        // If not moving (R)
+        // If moving, but not doing anything (N)
+        newGear = (currentSpeed > 0.5) ? 'N' : 'R';
     }
     // If nothing is pressed:
     else {
@@ -99,6 +108,10 @@ void CarDashboard::updateProgressBar()
         if (currentTemperature < 20.0) {
             currentTemperature = 20.0;
         }
+        
+        // If not moving (P)
+        // If moving, but not doing anything (N)
+        newGear = (currentSpeed > 0.5) ? 'N' : 'P';
     }
 
     // Update Mileage (speed dependent)
@@ -108,5 +121,6 @@ void CarDashboard::updateProgressBar()
     ui->infoDisplayWidget->setMileage(totalMileage);
     ui->infoDisplayWidget->setTemperature(currentTemperature);
     ui->fuelmeterWidget->setFuelLevel(currentFuel);
+    ui->gearDisplayWidget->setGear(newGear);
 }
 

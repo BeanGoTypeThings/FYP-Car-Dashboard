@@ -57,6 +57,16 @@
      </rect>
     </property>
    </widget>
+   <widget class="GearDisplay" name="gearDisplayWidget" native="true">
+    <property name="geometry">
+     <rect>
+      <x>700</x>
+      <y>145</y>
+      <width>200</width>
+      <height>250</height>
+     </rect>
+    </property>
+   </widget>
   </widget>
   <widget class="QMenuBar" name="menubar">
    <property name="geometry">
@@ -93,6 +103,12 @@
    <class>fuelmeter</class>
    <extends>QWidget</extends>
    <header>fuelmeter.h</header>
+   <container>1</container>
+  </customwidget>
+  <customwidget>
+   <class>GearDisplay</class>
+   <extends>QWidget</extends>
+   <header>geardisplay.h</header>
    <container>1</container>
   </customwidget>
  </customwidgets>

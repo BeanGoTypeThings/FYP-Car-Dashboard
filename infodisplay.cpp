@@ -36,7 +36,7 @@ void InfoDisplay::paintEvent(QPaintEvent *)
     QFont infoFont("Roboto", 20);
 
     // Top Rectangle (Mileage)
-    QRectF mileageBox(2, 2, 200 - 4, 50 - 4);
+    QRectF mileageBox(2, 2, 196, 46);
     p.setPen(QPen(lightBlue, 3));
     p.setBrush(darkBg);
     p.drawRoundedRect(mileageBox, 25, 25);
@@ -48,7 +48,7 @@ void InfoDisplay::paintEvent(QPaintEvent *)
     p.drawText(mileageBox, Qt::AlignCenter, mileageText);
 
     // Bottom Rectangle (Temperature)
-    QRectF tempBox(2, 62, 200 - 4, 50 - 4);
+    QRectF tempBox(2, 62, 196, 46);
     p.setPen(QPen(lightBlue, 3));
     p.setBrush(darkBg);
     p.drawRoundedRect(tempBox, 25, 25);
