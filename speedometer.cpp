@@ -36,8 +36,8 @@ void speedometer::paintEvent(QPaintEvent *)
     QColor lightBlue(84, 215, 219);
     QColor darkBlue(43, 114, 116);
     QColor darkBg(38, 38, 38);
-    QFont normalFont("Roboto", 50);
-    QFont smallFont("Roboto", 25);
+    QFont normalFont("Roboto Mono", 50);
+    QFont smallFont("Roboto Mono", 25);
 
     // Create the main circle.
     QRectF mainRect(-200, -200, 400, 400);
@@ -72,7 +72,7 @@ void speedometer::paintEvent(QPaintEvent *)
 
     // MPH Text.
     QString measurementText = QString("MPH");
-    QRectF measurementTextRect(-75, -97.5, 150, 30);
+    QRectF measurementTextRect(-75, -95, 150, 30);
     p.setFont(smallFont);
     p.drawText(measurementTextRect, Qt::AlignCenter, measurementText);
 
@@ -90,7 +90,7 @@ void speedometer::paintEvent(QPaintEvent *)
         double rad = qDegreesToRadians(l.ang + 90);
         double r = 165;
         QPointF pos(r * qCos(rad), -r * qSin(rad));
-        QRectF numericalSpeedRect(pos.x() - 25, pos.y() - 15, 50, 30);
+        QRectF numericalSpeedRect(pos.x() - 27.5, pos.y() - 15, 50, 30);
         p.drawText(numericalSpeedRect, Qt::AlignCenter, QString::number(l.val));
     }
 }

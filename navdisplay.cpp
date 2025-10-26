@@ -65,7 +65,7 @@ void NavDisplay::paintEvent(QPaintEvent *)
     // Custom Colours & Font
     QColor lightBlue(84, 215, 219);
     QColor darkBg(38, 38, 38);
-    QFont navFont("Roboto", 25);
+    QFont navFont("Roboto Mono", 25);
 
     // Main Rect
     int centerX = width() / 2 - 100;

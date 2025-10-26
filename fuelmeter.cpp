@@ -29,7 +29,7 @@ void fuelmeter::paintEvent(QPaintEvent *)
     QColor darkBlue(43, 114, 116);
     QColor lightRed(219, 84, 86);
     QColor darkRed(82, 30, 31);
-    QFont normalFont("Roboto", 20);
+    QFont normalFont("Roboto Mono", 20);
 
     // Fuel meter curve
     QPainterPath curvePath;

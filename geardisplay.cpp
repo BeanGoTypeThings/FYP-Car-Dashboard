@@ -27,7 +27,7 @@ void GearDisplay::paintEvent(QPaintEvent *)
     QColor lightBlue(84, 215, 219);
     QColor darkBlue(43, 114, 116);
     QColor darkBg(38, 38, 38);
-    QFont theFont("Roboto", 20);
+    QFont theFont("Roboto Mono", 20);
 
     // Lambda function to deduce styling depending on gear
     auto drawGearBox = [&](QRectF rect, char gear, bool isActive) {

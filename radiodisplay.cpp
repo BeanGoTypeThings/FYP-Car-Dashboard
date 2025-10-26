@@ -29,9 +29,9 @@ void RadioDisplay::paintEvent(QPaintEvent *)
     // Custom Colours & Font
     QColor lightBlue(84, 215, 219);
     QColor darkBg(38, 38, 38);
-    QFont infoFont("Roboto", 20);
-    QFont smallFont("Roboto", 15);
-    QFont microFont("Roboto", 10);
+    QFont infoFont("Roboto Mono", 20);
+    QFont smallFont("Roboto Mono", 15);
+    QFont microFont("Roboto Mono", 10);
 
     // Top Rectangle (Mode)
     QRectF modeBox(2, 2, 146, 46);
@@ -67,9 +67,9 @@ void RadioDisplay::paintEvent(QPaintEvent *)
     p.setPen(Qt::white);
     p.drawText(2,82,146,122, Qt::AlignCenter, "PLAYING");
     p.setFont(smallFont);
-    p.drawText(2,112,146,122, Qt::AlignCenter, "[INSERT NAME]");
+    p.drawText(2,110,146,122, Qt::AlignCenter, "[INSERT NAME]");
     p.setFont(microFont);
     p.drawText(10,197,146,122, Qt::AlignLeft, "1:00");
     p.drawText(-5,197,146,122, Qt::AlignRight, "-1:00");
-    p.drawText(2,172,146,122, Qt::AlignCenter, "- - - - - - SPOTIFY - - - - - -");
+    p.drawText(2,172,146,122, Qt::AlignCenter, "----- SPOTIFY -----");
 }

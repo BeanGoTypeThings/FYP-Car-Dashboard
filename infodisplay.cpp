@@ -33,7 +33,7 @@ void InfoDisplay::paintEvent(QPaintEvent *)
     // Custom Colours & Font
     QColor lightBlue(84, 215, 219);
     QColor darkBg(38, 38, 38);
-    QFont infoFont("Roboto", 20);
+    QFont infoFont("Roboto Mono", 20);
 
     // Top Rectangle (Mileage)
     QRectF mileageBox(2, 2, 196, 46);
@@ -44,7 +44,7 @@ void InfoDisplay::paintEvent(QPaintEvent *)
     // Draw Mileage Text
     p.setFont(infoFont);
     p.setPen(Qt::white);
-    QString mileageText = QString("%1 mi").arg(mMileage, 0, 'f', 1);
+    QString mileageText = QString("%1 Miles").arg(mMileage, 0, 'f', 1);
     p.drawText(mileageBox, Qt::AlignCenter, mileageText);
 
     // Bottom Rectangle (Temperature)
