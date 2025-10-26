@@ -107,6 +107,6 @@ void CarDashboard::updateProgressBar()
     ui->speedometerWidget->setSpeed(currentSpeed);
     ui->infoDisplayWidget->setMileage(totalMileage);
     ui->infoDisplayWidget->setTemperature(currentTemperature);
-    //ui->fuelmeterwidget->setFuelLevel(currentFuel);
+    ui->fuelmeterWidget->setFuelLevel(currentFuel);
 }
 

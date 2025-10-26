@@ -28,7 +28,7 @@
     <property name="geometry">
      <rect>
       <x>380</x>
-      <y>290</y>
+      <y>250</y>
       <width>200</width>
       <height>110</height>
      </rect>
@@ -38,13 +38,23 @@
     <property name="geometry">
      <rect>
       <x>230</x>
-      <y>245</y>
+      <y>230</y>
       <width>500</width>
       <height>220</height>
      </rect>
     </property>
     <property name="visible">
      <bool>false</bool>
+    </property>
+   </widget>
+   <widget class="fuelmeter" name="fuelmeterWidget" native="true">
+    <property name="geometry">
+     <rect>
+      <x>280</x>
+      <y>390</y>
+      <width>400</width>
+      <height>150</height>
+     </rect>
     </property>
    </widget>
   </widget>
@@ -77,6 +87,12 @@
    <class>NavDisplay</class>
    <extends>QWidget</extends>
    <header>navdisplay.h</header>
+   <container>1</container>
+  </customwidget>
+  <customwidget>
+   <class>fuelmeter</class>
+   <extends>QWidget</extends>
+   <header>fuelmeter.h</header>
    <container>1</container>
   </customwidget>
  </customwidgets>

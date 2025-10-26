@@ -2,7 +2,6 @@
 #define FUELMETER_H
 
 #include <QWidget>
-#include <QQuickWidget>
 
 class fuelmeter : public QWidget
 {
@@ -16,7 +15,6 @@ protected:
 
 private:
     float mFuelLevel;
-    QQuickWidget *mFuelIcon;
 };
 
 #endif // FUELMETER_H
