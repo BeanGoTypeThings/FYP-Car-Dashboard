@@ -1,0 +1,31 @@
+{
+	"version": 1,
+	"changelists": [
+		{
+			"guid": "00000000000000000000000000000000",
+			"description": "Default Uncontrolled Changelist",
+			"files": [
+				"/Users/lukebessell/Game Development/Unreal Projects/CarDashboardSim/Content/LVL_Simulation_1.umap",
+				"/Users/lukebessell/Game Development/Unreal Projects/CarDashboardSim/Content/Maps/LVL_Simulation_1.umap",
+				"/Users/lukebessell/Game Development/Unreal Projects/CarDashboardSim/Content/BP/BP_Dashboard.uasset",
+				"/Users/lukebessell/Game Development/Unreal Projects/CarDashboardSim/Content/BP/GM_Simulation.uasset",
+				"/Users/lukebessell/Game Development/Unreal Projects/CarDashboardSim/Content/BP/BP_PC.uasset",
+				"/Users/lukebessell/Game Development/Unreal Projects/CarDashboardSim/Content/Mesh/SM_Dashboard_Wheel.uasset",
+				"/Users/lukebessell/Game Development/Unreal Projects/CarDashboardSim/Content/Mesh/SM_Dashboard_Main.uasset",
+				"/Users/lukebessell/Game Development/Unreal Projects/CarDashboardSim/Content/BP/Input_Actions/IA_Jump.uasset",
+				"/Users/lukebessell/Game Development/Unreal Projects/CarDashboardSim/Content/BP/Input_Actions/IMC_Default.uasset",
+				"/Users/lukebessell/Game Development/Unreal Projects/CarDashboardSim/Content/BP/Input_Actions/IA_MoveForward.uasset",
+				"/Users/lukebessell/Game Development/Unreal Projects/CarDashboardSim/Content/BP/Input_Actions/IA_MoveLeft.uasset",
+				"/Users/lukebessell/Game Development/Unreal Projects/CarDashboardSim/Content/BP/Input_Actions/IA_MoveRight.uasset",
+				"/Users/lukebessell/Game Development/Unreal Projects/CarDashboardSim/Content/BP/Input_Actions/IA_MoveBackwards.uasset",
+				"/Users/lukebessell/Game Development/Unreal Projects/CarDashboardSim/Content/Mesh/SM_Dial_Main.uasset",
+				"/Users/lukebessell/Game Development/Unreal Projects/CarDashboardSim/Content/Mesh/SM_Dial.uasset",
+				"/Users/lukebessell/Game Development/Unreal Projects/CarDashboardSim/Content/BP/BP_Dial.uasset",
+				"/Users/lukebessell/Game Development/Unreal Projects/CarDashboardSim/Content/BP/UI_Dashboard.uasset",
+				"/Users/lukebessell/Game Development/Unreal Projects/CarDashboardSim/Content/BP/Input_Actions/IA_Move.uasset",
+				"/Users/lukebessell/Game Development/Unreal Projects/CarDashboardSim/Content/BP/Input_Actions/IA_Look.uasset",
+				"/Users/lukebessell/Game Development/Unreal Projects/CarDashboardSim/Content/BP/GM_Simulation_1.uasset"
+			]
+		}
+	]
+}
