@@ -5,6 +5,11 @@
 			"guid": "00000000000000000000000000000000",
 			"description": "Default Uncontrolled Changelist",
 			"files": [
+				"D:/Epic Games/Unreal Projects/FYP-Car-Dashboard/CarDashboardSim/Content/BP/GUI/UI_Menu.uasset",
+				"D:/Epic Games/Unreal Projects/FYP-Car-Dashboard/CarDashboardSim/Content/Maps/LVL_Simulation.umap",
+				"D:/Epic Games/Unreal Projects/FYP-Car-Dashboard/CarDashboardSim/Content/BP/GUI/UI_Dashboard.uasset",
+				"D:/Epic Games/Unreal Projects/FYP-Car-Dashboard/CarDashboardSim/Content/Maps/LVL_Menu.umap",
+				"D:/Epic Games/Unreal Projects/FYP-Car-Dashboard/CarDashboardSim/Content/BP/BP_Track.uasset",
 				"/Users/lukebessell/Game Development/Unreal Projects/FYP-Car-Dashboard/CarDashboardSim/Content/Maps/LVL_Simulation_1.umap",
 				"/Users/lukebessell/Game Development/Unreal Projects/FYP-Car-Dashboard/CarDashboardSim/Content/Textures/M_Colour.uasset",
 				"/Users/lukebessell/Game Development/Unreal Projects/FYP-Car-Dashboard/CarDashboardSim/Content/Textures/MI_Red.uasset",
